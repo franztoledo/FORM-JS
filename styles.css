@@ -18,3 +18,9 @@ main {
 	grid-template-columns: 1fr 1fr;
 	gap: 20px;
 }
+.formulario__label {
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
+}
