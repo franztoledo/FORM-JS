@@ -84,6 +84,10 @@ main {
 .formulario__mensaje p {
 	margin: 0;
 }
+.formulario__grupo-terminos{
+  display: flex;
+  justify-content: center;
+}
 .formulario__grupo-btn-enviar {
 	display: flex;
 	flex-direction: column;
