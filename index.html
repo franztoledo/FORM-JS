@@ -57,12 +57,12 @@
       </div>
       <!--Teléfono -->
       <div class="formulario__grupo" id="grupo__telefono">
-        <label for="telefono" class="formulario__label">Correo Electrónico</label>
+        <label for="telefono" class="formulario__label">Telefono</label>
         <div class="formulario__grupo-input">
-          <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="XXX-XXX-XXX">
+          <input type="phone" class="formulario__input" name="telefono" id="telefono" placeholder="XXX-XXX-XXX">
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
-        <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+        <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 9 dígitos.</p>
       </div>
       <!--Edad -->
       <div class="formulario__grupo" id="grupo__edad">
@@ -73,7 +73,15 @@
         </div>
         <p class="formulario__input-error">La edad minima debe ser 13 años</p>
       </div>
-
+      <!--Sitio web -->
+      <div class="formulario__grupo" id="grupo__website">
+        <label for="website" class="formulario__label">Sitio web </label>
+        <div class="formulario__grupo-input">
+          <input type="url" class="formulario__input" name="website" id="website" >
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">La URL es valida</p>
+      </div>
 
     </form>
   </main>
