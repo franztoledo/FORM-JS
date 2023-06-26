@@ -14,7 +14,7 @@ const preventString= (e)=>{
   }
 }
 document.querySelectorAll('.input_number').forEach((inumber)=>{
-  inumber.addEventListener('keypress', permitirEscribir)
+  inumber.addEventListener('keypress', preventString)
 })
 const validarFormulario = (e)=>{
   switch (e.target.name) {
