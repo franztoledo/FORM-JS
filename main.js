@@ -10,11 +10,12 @@ const expresiones = {
   edad: /^\d{1,3}$/
 };
 const campos = {
-	usuario: false,
 	nombre: false,
+  apellido: false,
 	password: false,
-	correo: false,
-	telefono: false
+	email: false,
+	telefono: false,
+  edad:false
 }
 const preventString= (e)=>{
   if (e.keyCode < 45 || e.keyCode > 57) {
@@ -49,7 +50,7 @@ const validarFormulario = (e)=>{
 			validarCampo(expresiones.edad, e.target, 'edad')
 		break;
     case "website":
-			validarCampo(expresiones.website, e.target, 'website');
+			
 		break;
 	}
 }
@@ -90,10 +91,27 @@ const validarPassword2 = () => {
 		campos['password'] = true;
 	}
 }
-formulario.addEventListener('submit', (e)=>{
- e.preventDefault()
-});
 inputs.forEach((input)=>{
   input.addEventListener('keyup', validarFormulario)
   input.addEventListener('blur', validarFormulario)
 })
+console.log(campos);
+formulario.addEventListener('submit', (e) => {
+	e.preventDefault();
+
+	const terminos = document.getElementById('terminos');
+	if(campos.nombre && campos.apellido && campos.password && campos.email && campos.telefono && campos.edad &&terminos.checked ){
+		formulario.reset();
+
+		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+		setTimeout(() => {
+			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+		}, 5000);
+
+		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+			icono.classList.remove('formulario__grupo-correcto');
+		});
+	} else {
+		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+	}
+});
