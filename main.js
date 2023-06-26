@@ -7,7 +7,8 @@ const expresiones = {
 	password: /^.{6,12}$/, // 5 a 12 digitos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	telefono: /^\d{9}$/, //9 numeros.
-  edad: /^\d{1,3}$/
+  edad: /^\d{1,3}$/,
+	url: /[\w\-\.]+\.\w{2,5}\/?\5*/
 };
 const campos = {
 	nombre: false,
@@ -16,6 +17,15 @@ const campos = {
 	email: false,
 	telefono: false,
   edad:false
+}
+const camposValue={
+	nombre: '',
+  apellido: '',
+	password: '',
+	email:'',
+	telefono: '',
+  edad:'',
+	website:'',
 }
 const preventString= (e)=>{
   if (e.keyCode < 45 || e.keyCode > 57) {
@@ -50,7 +60,7 @@ const validarFormulario = (e)=>{
 			validarCampo(expresiones.edad, e.target, 'edad')
 		break;
     case "website":
-			
+			validarCampo(expresiones.url, e.target, 'website')
 		break;
 	}
 }
@@ -62,6 +72,7 @@ const validarCampo = (expresion, input, campo) => {
 		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
 		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
 		campos[campo] = true;
+		camposValue[campo]=`${input.value}`
 	} else {
 		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
 		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
@@ -111,6 +122,16 @@ formulario.addEventListener('submit', (e) => {
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
 			icono.classList.remove('formulario__grupo-correcto');
 		});
+		const resultado ={
+			nombre: `${camposValue.nombre} ${camposValue.apellido}`,
+			password: camposValue.password,
+			email:camposValue.email,
+			telefono:camposValue.telefono,
+			edad:camposValue.edad,
+			website:camposValue.website,
+			experiencia:inputSlider.value,
+		}
+		console.log(resultado);
 	} else {
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
 	}
