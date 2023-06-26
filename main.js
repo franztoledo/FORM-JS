@@ -8,6 +8,14 @@ const expresiones = {
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	telefono: /^\d{9}$/ //9 numeros.
 };
+const preventString= (e)=>{
+  if (e.keyCode < 45 || e.keyCode > 57) {
+    e.returnValue = false
+  }
+}
+document.querySelectorAll('.input_number').forEach((inumber)=>{
+  inumber.addEventListener('keypress', permitirEscribir)
+})
 const validarFormulario = (e)=>{
   switch (e.target.name) {
 		case "nombre":
