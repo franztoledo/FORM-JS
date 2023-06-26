@@ -8,6 +8,35 @@ const expresiones = {
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	telefono: /^\d{9}$/ //9 numeros.
 };
+const validarFormulario = (e)=>{
+  switch (e.target.name) {
+		case "nombre":
+			validarCampo(expresiones.nombre, e.target, 'nombre');
+		break;
+		case "apellido":
+			validarCampo(expresiones.nombre, e.target, 'apellido');
+		break;
+		case "password":
+			validarCampo(expresiones.password, e.target, 'password');
+			validarPassword2();
+		break;
+		case "password2":
+			validarPassword2();
+		break;
+		case "correo":
+			validarCampo(expresiones.correo, e.target, 'correo');
+		break;
+		case "telefono":
+			validarCampo(expresiones.telefono, e.target, 'telefono');
+		break;
+    case "edad":
+			validarCampo(expresiones.edad, e.target, 'edad');
+		break;
+    case "website":
+			validarCampo(expresiones.website, e.target, 'website');
+		break;
+	}
+}
 formulario.addEventListener('submit', (e)=>{
  e.preventDefault()
 });
