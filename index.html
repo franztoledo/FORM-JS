@@ -11,6 +11,7 @@
   <main>
     <form action="" class="formulario" id="formulario">
       <!-- nombre -->
+      <h1 class="formulario__TITULO">COMPLETA EL FORMULARIO</h1>
       <div class="formulario__grupo" id="grupo__nombre">
         <label for="nombre" class="formulario__label">Nombre</label>
         <div class="formulario__grupo-input">
@@ -86,16 +87,17 @@
       
       <!--Nivel de experiencia -->
       <div class="formulario__grupo formulario__range" id="grupo__level">
-        <label for="level" class="formulario__label">Nivel de experiencia (años/opcional)</label>
+        <label for="level" class="formulario__label label_range">Nivel de experiencia (años/opcional)</label>
         <div class="sliderValue">
           <span>5</span>
         </div>
-        <div class="formulario__grupo-input field">
-          <div class="value left">0</div>
-          <input type="range" class="formulario__input-range input-slider" name="level" id="level" min="0" max="10" value="5" steps="">
-          <div class="value right">10</div>
+        <div class="field">
+          <div class="formulario__grupo-input field">
+            <div class="value left">0</div>
+            <input type="range" class="formulario__input-range input-slider" name="level" id="level" min="0" max="10" value="5" steps="">
+            <div class="value right">10</div>
+          </div>
         </div>
-        <p class="formulario__input-error">La URL es valida</p>
       </div>
       <!--Terminos y Condiciones -->
 			<div class="formulario__grupo formulario__grupo-terminos" id="grupo__terminos">

@@ -122,8 +122,8 @@ const inputSlider = document.querySelector(".input-slider");
 inputSlider.oninput = (()=>{
   let value = inputSlider.value;
   slideValue.textContent = value;
-  slideValue.style.left = `calc(${value*10}% + calc(${(10-value)/2}%)`;
-  slideValue.classList.add("show");
+	slideValue.style.left = `calc(${value*10}%)`;
+  	slideValue.classList.add("show");
 });
 inputSlider.onblur = (()=>{
   slideValue.classList.remove("show");

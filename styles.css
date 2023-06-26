@@ -3,17 +3,34 @@
 }
 
 body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-family: 'Roboto', sans-serif;
-	background: #E5E5E5;
+	background-image: linear-gradient(205deg, #ef98ff 0, #bf83ff 25%, #8f6cd8 50%, #6355b0 75%, #3d408b 100%);
+	
+	animation: cambiar 2s ease-in-out infinite;
 }
 
 main {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	height: 100%;
 	max-width: 800px;
-	width: 90%;
-	margin: auto;
-	padding: 40px;
+	width: 85%;
+}
+.formulario__TITULO{
+	text-align: center;
+	margin-bottom: 0;
 }
 .formulario {
+	padding: 16px 24px;
+	border-radius: 16px;
+	background: #f2f2f26c;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 20px;
@@ -71,6 +88,7 @@ main {
 .formulario__checkbox {
 	margin-right: 10px;
 }
+.formulario__TITULO,
 .formulario__grupo-terminos, 
 .formulario__mensaje,
 .formulario__range,
@@ -129,6 +147,9 @@ main {
 	display: block;
 }
 /* RANGO DE NIVEL DE EXPERIENCIA */
+.label_range{
+	padding: 0;
+}
 .formulario__range{
 	justify-self: center;
 	width: 80%;
@@ -154,7 +175,7 @@ main {
 .formulario__range input{
   -webkit-appearance: none;
   width: 100%;
-  height: 3px;
+  height: 8px;
   background: #ddd;
   border-radius: 5px;
   outline: none;
@@ -163,16 +184,17 @@ main {
 .field .value{
   position: absolute;
   font-size: 18px;
-  color: #664AFF;
+  color: #000;
   font-weight: 600;
 }
 .field .value.left{
-  left: -22px;
+  left: -20px;
 }
 .field .value.right{
-  right: -43px;
+  right: -24px;
 }
 .sliderValue{
+
   position: relative;
   width: 100%;
 }
@@ -180,7 +202,7 @@ main {
   position: absolute;
   height: 35px;
   width: 35px;
-  transform: translateX(-50%) scale(0);
+  transform: translateX(-60%) scale(0);
   font-weight: 500;
   top: -60px;
   line-height: 44px;
@@ -190,14 +212,14 @@ main {
 	transition: transform 0.3s ease-in-out;
 }
 .sliderValue span.show{
-  transform: translateX(-70%) scale(1);
+  transform: translateX(-50%) scale(1);
 }
 .sliderValue span:after{
   position: absolute;
   content: '';
   height: 100%;
   width: 100%;
-  background: #664AFF;
+  background-image: radial-gradient(circle at 79.88% -14.09%, #e394ff 0, #b981fb 25%, #8f6cd8 50%, #6857b4 75%, #464493 100%);
   border: 3px solid #fff;
   z-index: -1;
   left: 50%;
@@ -212,9 +234,14 @@ main {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #664AFF;
-  border: 1px solid #664AFF;
+  background: #000;
+  border: 1px solid #000;
   cursor: pointer;
+}
+
+.formulario__range .formulario__label{
+	margin-top: 20px;
+	margin-bottom: 40px;
 }
 
 /* ----- -----  Estilos para Validacion ----- ----- */
@@ -240,15 +267,25 @@ main {
 	.formulario {
 		grid-template-columns: 1fr;
 	}
-
+	.formulario__TITULO,
 	.formulario__grupo-terminos, 
 	.formulario__mensaje,
 	.formulario__range,
 	.formulario__grupo-btn-enviar {
 		grid-column: 1;
 	}
-
+	.formulario__grupo-terminos{
+		text-align: center;
+	}
 	.formulario__btn {
 		width: 100%;
 	}
+	.formulario__range{
+		padding: 0;
+	}
+}
+@keyframes cambiar {
+	0%{background-position: 0 50%;}
+	50%{background-position: 100 50%;}
+	100%{background-position: 0 50%;}
 }
