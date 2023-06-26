@@ -10,5 +10,8 @@ const expresiones = {
 };
 formulario.addEventListener('submit', (e)=>{
  e.preventDefault()
- 
 });
+inputs.forEach((input)=>{
+  input.addEventListener('keyup', validarFormulario)
+  input.addEventListener('blur', validarFormulario)
+})
