@@ -73,6 +73,7 @@ main {
 }
 .formulario__grupo-terminos, 
 .formulario__mensaje,
+.formulario__range,
 .formulario__grupo-btn-enviar {
 	grid-column: span 2;
 }
@@ -127,6 +128,47 @@ main {
 .formulario__mensaje-exito-activo {
 	display: block;
 }
+/* RANGO DE NIVEL DE EXPERIENCIA */
+.formulario__range{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  border-radius: 10px;
+  padding: 0 65px 0 45px;
+}
+.sliderValue{
+  position: relative;
+  width: 100%;
+}
+.field{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+.formulario__range input{
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+.field .value{
+  position: absolute;
+  font-size: 18px;
+  color: #664AFF;
+  font-weight: 600;
+}
+.field .value.left{
+  left: -22px;
+}
+.field .value.right{
+  right: -43px;
+}
 /* ----- -----  Estilos para Validacion ----- ----- */
 .formulario__grupo-correcto .formulario__validacion-estado {
 	color: #1ed12d;
@@ -146,13 +188,14 @@ main {
 	border: 3px solid #bb2929;
 }
 /* ----- -----  Mediaqueries ----- ----- */
-@media (max-width: 768px) {
+@media (max-width: 760px) {
 	.formulario {
 		grid-template-columns: 1fr;
 	}
 
 	.formulario__grupo-terminos, 
 	.formulario__mensaje,
+	.formulario__range,
 	.formulario__grupo-btn-enviar {
 		grid-column: 1;
 	}
